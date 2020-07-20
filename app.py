@@ -23,8 +23,15 @@ def results():
     if request.method == "POST":
         id = request.form['cryptocurrency']
         json = model.get_coin(id)
-        
-        return render_template("results.html", json=json)
+        props = {
+            "name":json['data']['coin']['name'],
+            "description":model.remove_tags(json['data']['coin']['description']),
+            "symbol":json['data']['coin']['symbol'],
+            "history":json['data']['coin']['history'],
+            "price":json['data']['coin']['price'],
+            "iconUrl":json['data']['coin']['iconUrl']
 
+        }
+        return render_template("results.html", props=props)
     else:
         return "Error"
