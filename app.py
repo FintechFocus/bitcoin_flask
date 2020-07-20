@@ -31,7 +31,8 @@ def results():
             "symbol":json['data']['coin']['symbol'],
             "history":json['data']['coin']['history'],
             "price":json['data']['coin']['price'],
-            "iconUrl":json['data']['coin']['iconUrl']
+            "iconUrl":json['data']['coin']['iconUrl'],
+            "websiteUrl":json['data']['coin']['websiteUrl']
 
         }
         return render_template("results.html", props=props)

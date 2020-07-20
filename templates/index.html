@@ -1,13 +1,17 @@
 <html>
-    <head>
-        <title>Cryptocurrency Info</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    </head>
-    <body>
-        <form action="/results" method="POST">
 
-            <label for="crypto">Choose a car:</label>
-            <select id="crypto" name="cryptocurrency">
+<head>
+	<title>Cryptocurrency Info</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<form action="/results" method="POST">
+
+			<label for="crypto">Choose a car:</label>
+			<select id="crypto" name="cryptocurrency">
                 <option value="1">Bitcoin</option>
                 <option value="2">Ethereum</option>
                 <option value="3">Tether USD</option>
@@ -18,12 +22,14 @@
                 <option value="8">Litecoin</option>
                 <option value="9">Chaincoin</option>
             </select>
-            <input type="submit">
-            
+			<input type="submit">
 
 
-        
-        
+
+
+
         </form>
-    </body>
+	</div>
+</body>
+
 </html>
