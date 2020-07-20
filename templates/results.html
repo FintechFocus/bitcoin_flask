@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="../static/css/style.css">
     </head>
     <body>
-<<<<<<< HEAD
+
 
         <div class="container">
             <img class="icon" src={{ props.iconUrl }}>
@@ -14,22 +14,19 @@
             <h4> The current price is <b>${{props.price}}</b></h4>
             <p> {{ props.description }} </p>
             <br>
-=======
-        <div class="container">
 
-            <h2>This is the results page</h2>
 
-            <div>
-                {{json['data']['coin']['name']}}
-                {{description}}}
-                {{json['data']['coin']['symbol']}}
+            <ul>
+                {% for price in props.history %}
+                    <li>{{price}}</li>
+                {% endfor %}
     
-            </div>
->>>>>>> 84cb7f755b2ae209c173fd804e88c03c862b9873
+            </ul>
 
         </div>
 
-        <!-- <h3>{{info}}</h3> -->
+
+ 
 
     </body>
 </html>
