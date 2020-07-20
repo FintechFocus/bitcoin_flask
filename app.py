@@ -1,7 +1,7 @@
 # ---- YOUR APP STARTS HERE ----
 # -- Import section --
 from flask import Flask
-from flask import render_template
+from flask import render_template, render_template_string
 from flask import request
 import model
 
@@ -22,7 +22,9 @@ def index():
 def results():
     if request.method == "POST":
         id = request.form['cryptocurrency']
+        
         json = model.get_coin(id)
+
         props = {
             "name":json['data']['coin']['name'],
             "description":model.remove_tags(json['data']['coin']['description']),
@@ -33,5 +35,6 @@ def results():
 
         }
         return render_template("results.html", props=props)
+
     else:
         return "Error"
