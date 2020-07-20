@@ -1,7 +1,7 @@
 # ---- YOUR APP STARTS HERE ----
 # -- Import section --
 from flask import Flask
-from flask import render_template
+from flask import render_template, render_template_string
 from flask import request
 import model
 
@@ -22,9 +22,11 @@ def index():
 def results():
     if request.method == "POST":
         id = request.form['cryptocurrency']
-        json = model.get_coin(id)
         
-        return render_template("results.html", json=json)
+        json = model.get_coin(id)
+        description = render_template_string(json['data']['coin']['description'])
+        
+        return render_template("results.html", json=json, description = description)
 
     else:
         return "Error"
